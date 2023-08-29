@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #b8ebe5;
+        }
+        div {
+            background-image: url(./1.jpg);
+            width: 700px;
+            height: 1000px;
+            /* 不平铺 */
+            /* background-repeat: no-repeat; */
+            /* 平铺 */
+            /* background-repeat: repeat; */
+            /* 水平平铺 */
+            /* background-repeat: repeat-x; */
+            /* 垂直平铺 */
+            background-repeat: repeat-y;
+            /*  背景位置 */
+            background-position: 200px 200px;
+        }
+        .tmp {
+            width: 400px;
+            height: 200px;
+            border: 2px green solid;
+            border-radius: 2em;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 40px;
+            border-bottom-right-radius: 20px;
+            border-bottom-left-radius: 40px;
+        }
+        a {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        背景属性学习
+    </div>
+    <div class="tmp">
+    </div>
+    <a href="">链接1</a>
+    <a href="">链接2</a>
+</body>
+</html>

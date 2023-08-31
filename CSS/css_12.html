@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 536px;
+            height: 200px;        
+        }
+        a {
+            color: black;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: aqua;
+        }
+        .title1 {
+            font-size: 20px;
+            font-weight: bolder;
+            color: #0055db; 
+            text-align: left;         
+        }
+        .title2 {
+            text-align: center;
+        }
+        .icon {
+            background-image: url(./flush.png);
+            width: 20px;
+            height: 20px;
+            background-size: 100% 100%;
+            display: inline-block;
+            /* 图片和文字垂直方向对齐 */
+            vertical-align: bottom;
+        }
+        .content {
+            font-size: 18px;
+            /* 上下边距 */
+            line-height: 40px;
+        }
+        .num1 {
+            font-size: 20px;
+            color: #fffff3;  
+            background-color: #f54545;     
+            padding-right: 8px;
+        }
+        .num2 {
+            font-size: 20px;
+            color: #fffff3;  
+            background-color: #ff8547;    
+            padding-right: 8px;
+        }
+        .num3 {
+            font-size: 20px;
+            color: #fffff3;  
+            background-color: #ffac38;    
+            padding-right: 8px;
+        }
+        .con_1 {
+            text-align: left;
+            border-bottom: 2px solid #f3f3f3;
+        }
+        .con_2 {
+            text-align: center;
+            border-bottom: 2px solid #f3f3f3;
+        }
+        .cool {
+            font-size: 18px;
+            color: #f3f3f3;
+            background-color: red;
+            padding-left: 4px;
+            padding-right: 4px;
+        }
+    </style>
+</head>
+<body>
+    <table cellspacing="0px">
+        <thead>
+            <tr class="title">
+                <th class="title1">百度热搜榜</th>
+                <th class="title2"><a href="#">换一换<span class="icon"></span></th>
+            </tr>       
+        </thead>
+        <tr class="content">
+            <td class="con_1">
+                <span class="num1" >1</span>
+                <span><a href="#">浙大回应热搜事件</a></span>
+                <span class="cool">热</span>
+            </td>
+            <td class="con_2">474万</td>
+        </tr>
+        <tr class="content">
+            <td class="con_1">
+                <span class="num2" >2</span>
+                <span><a href="#">浙大回应热搜事件</a></span>
+            </td>
+            <td class="con_2">474万</td>
+        </tr>
+        <tr class="content">
+            <td class="con_1">
+                <span class="num3" >3</span>
+                <span><a href="#">浙大回应热搜事件</a></span>
+            </td>
+            <td class="con_2">474万</td>
+        </tr>
+    </table>
+</body>
+</html>

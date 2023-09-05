@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function hello() {
+        alert("hhh");
+    }
+    let A = hello();
+    console.log(typeof(A));//undefined
+    for(i = 0; i < 100; i++){
+
+    }
+    //此时i是全局变量
+    console.log(i);
+    bbb=100;
+    console.log("bbb="+bbb);
+
+    var add = function() {
+        var name = "asd";
+        return name;
+    }
+    console.log(add());
+
+    // 创建对象
+    let a = {
+        name: "邹雨洁",
+        height: "163",
+        weight: "45kg",
+        sayHello:function() {
+            console.log("hello");
+        }
+
+    }
+    a.adad = "sfdwff";
+    console.log(a.adad);
+    console.log(a.name);
+    a.sayHello();
+    console.log(a["height"]);
+    console.log(a["weight"]);
+
+    //2.
+    let stu = new Object();
+    stu.name = "邹雨洁";
+    stu["weight"] = "50kg";
+    stu.say = function() {
+        console.log("hello");
+    }
+    console.log(stu.name);
+    console.log(stu["weight"]);
+    stu.say();
+
+    //3
+    function People(name, height,weight) {
+        this.name = name;
+        this.height = height;
+        this.weight = weight;
+        this.Say = function() {
+            console.log(name + "Say hello");
+        }
+    }
+    let Zz = new People("邹雨洁","164cm","45kg");
+    Zz.Say();
+    console.log(Zz);
+
+    //
+    var Yy = {
+        name: "余",
+        height: "170cm",
+    }
+    console.log(Yy.name);
+
+    class Peo {
+        static id = "1";
+        name = "wqd";   
+    }
+    console.log(Peo.id);
+</script>
+</html>

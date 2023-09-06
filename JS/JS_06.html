@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div class="box1">box1</div>
+    <div class="box2">box2</div> -->
+    <!-- <h3><span><input type="text"></span></h3> -->
+
+    <!-- <input type="button" value="按钮"> -->
+
+    <!-- <input type="text"> -->
+
+    <input type="text" onkeyup="myOnkeyUp()">
+</body>
+<script>
+    // // document全局变量
+    // console.log(document.querySelector(".box1"));
+    // // console.log(document.querySelector('h3').querySelector("span"));
+
+    // console.log(document.querySelectorAll("div"));
+
+    // //事件源
+    // let button = document.querySelector("input");
+    // //绑定事件类型
+    // //处理方式
+    // button.onclick = function() {
+    //     alert("hello");
+    // }
+
+    // 事件源
+    let input = document.querySelector("input");
+    // onkeydown不区分大小写
+    // onkeypress区分大小写
+    input.onkeydown = function(event) {
+        // console.log("已按下键盘");
+        // let a = event.keyCode;
+        // let b = String.fromCharCode(a);
+        // console.log(b);
+        
+        //shift
+        if(event.shiftKey) {
+            alert("shift被按下");
+        }
+        if(event.altKey) {
+            alert("alt被按下");
+        }
+    } 
+
+    function myOnkeyUp() {
+        console.log("按键被抬起");
+    }
+
+</script>
+</html>

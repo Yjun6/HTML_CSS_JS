@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <span>这是一个span标签</span>
+    <img src="./right.png" alt="图片加载失败" title="这是一个提示图片" width="100px" height="100px"> -->
+
+    <input class="btn" type="button" value="播放" onclick="Onclick()"><br/>
+    
+    <input class="input" type="text" name="" id="" value="0">
+    <input class="add" type="button" name="" id="" value="+1" onclick="Add()">
+    <input class="min" type="button" value="-1" onclick="Min()">
+    <br/>
+
+    <input class="all" type="checkbox" onclick="All()">选中全部<br/>
+    <input type="checkbox" class="select1" onclick="Select1()">陈都灵<br/>
+    <input type="checkbox" class="select2" onclick="Select2()">刘亦菲<br/>
+    <input type="checkbox" class="select3" onclick="Select3()">李圣经<br/>
+
+</body>
+    <script>
+        // let img = document.querySelector("img");
+        // console.dir(img);
+        // img.title = "这是已经修改的";
+        // img.onclick = function() {
+        //     alert('点击了这个图片');
+        // }
+
+        let  btn = document.querySelector(".btn");
+        // 当按钮的value等于 播放时， value变成 暂停
+        function Onclick() {
+            if(btn.value == '播放') {
+                btn.value = "暂停";
+            }else {
+                btn.value = "播放";
+            }
+        }
+        // onclick();
+
+        let input = document.querySelector(".input");
+         let add = document.querySelector(".add");
+        let min = document.querySelector(".min");
+        function Add() {
+            input.value++;
+        }
+        function Min() {
+            input.value--;
+        }
+
+        let all = document.querySelector(".all");
+        let select1 = document.querySelector(".select1");
+        let select2 = document.querySelector(".select2");
+        let select3 = document.querySelector(".select3");
+        console.dir(all);
+        function All() {
+            select1.checked = all.checked;
+            select2.checked = all.checked;
+            select3.checked = all.checked;
+        }
+        function Select1() {
+            if(!select1.checked) {
+                //没有选中select1
+                all.checked = false;
+            }else {
+                //选中select1
+                IsSelectAll();
+            }
+        }
+        function Select2() {
+            if(!select2.checked) {
+                all.checked = false;
+            }else {
+                //选中select2
+                IsSelectAll();
+            }
+        }
+        function Select3() {
+            if(!select3.checked) {
+                all.checked = false;
+            }else {
+                //选中select3
+                IsSelectAll();
+            }
+        }
+        function IsSelectAll() {
+            if(select1.checked && select2.checked && select3.checked) {
+                all.checked = true;
+            }
+        }
+</script>
+</html> 

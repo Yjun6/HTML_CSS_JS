@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p class="p1">这是一段话</p>
+        <p class="p2">这是一段话</p>
+        <p>这是一段话</p>
+        <p>这是一段话</p>
+    </div>
+</body>
+<script>
+    //创建节点
+    let element = document.createElement("h3");
+    element.innerHTML = "这是我们创建的新的节点";
+    let div = document.querySelector("div");
+    div.appendChild(element);
+    //插入节点在指定节点前
+    let new_node = document.createElement("p");
+    new_node.innerHTML = "这是新的内容";
+    div.insertBefore(new_node, document.querySelector(".p1"));
+    div.insertBefore(new_node, document.querySelector(".p2"));
+</script>
+</html>

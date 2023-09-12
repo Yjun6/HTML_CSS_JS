@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            /* 默认样式清除 */
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .create_task {
+            width: 400px;
+            height: 100px;
+            margin: 0 auto;
+            text-align: center;
+            /* 弹性布局 */
+            display: flex;
+            align-items: center;
+        }
+        .c1 {
+            width: 300px;
+            height: 50px;
+            padding: 0;
+            font-size: 20px;
+            text-align: center;
+        }
+        .c2 {
+            width: 100px;
+            height: 50px;
+            padding: 0;
+            background-color: orange;
+            border: 0px;
+            color: white;
+            font-size: 20px;
+            border-radius: 5px;
+        }
+        .content {
+            width: 400px;
+            display: flex;
+            margin: 0px auto;
+        }
+        h3 {
+            text-align: center;
+            width: 200px;
+            background-color: black;
+            color: white;          
+        }
+        .todo, .done {
+            width: 50%;
+            height: 100%;
+        }
+        span {
+            width: 200px;
+            font-size: 18px;
+            margin-left: 5px;
+        }
+        .row {
+            margin-top: 20px;
+            width: 200px;
+            display: flex;
+            align-items: center;
+        }
+        .btn {
+            width: 50px;
+            font-size: 16px;
+        }
+        .btn:active {
+            background-color: blueviolet;
+        }
+        .c2:active {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="create_task">
+        <input class="c1" type="text"><input class="c2" type="button" value="新建任务" onclick="newJob()">
+    </div>
+    <div class="content">
+        <div class="todo">
+            <h3>未完成</h3>
+            <!-- <div class="row">
+                <input class="check" type="checkbox" name="" id="">
+                <span>吃饭</span>
+                <input class="btn" type="button" value="删除">
+            </div> -->
+        </div>
+        <div class="done">
+            <h3>已完成</h3>
+        </div>
+    </div>
+</body>
+<script>
+    function newJob() {
+        let todo = document.querySelector(".todo");
+        let c1 = document.querySelector(".c1");
+
+        let div = document.createElement("div");
+        let checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.className = "check";
+        let span = document.createElement("span");       
+        span.innerHTML = c1.value;
+        if(span.innerHTML == ""){
+            return;
+        }
+        let del = document.createElement("input");
+        del.type = "button";
+        del.value = "删除";
+        del.className = "btn";
+        div.appendChild(checkbox);
+        div.appendChild(span);
+        div.appendChild(del);
+        div.className = "row";
+        todo.appendChild(div);
+        //删除节点
+        let btn = document.querySelectorAll(".btn");
+        for(let i=0; i<btn.length; i++){
+            btn[i].onclick = function() {
+                let parent = this.parentNode;
+                console.log(parent);
+                let parent_p = parent.parentNode;
+                parent_p.removeChild(parent);
+            }
+        }
+        //节点变换位置
+        let check = document.querySelectorAll(".check");
+        for(let i=0; i<check.length; i++){
+            console.log(check.length);
+            check[i].onclick = function() {
+                let parent = this.parentNode;
+                let tager;
+                console.log(this.checked);
+                // this.checked 为 true代表已完成
+                //false 代表未完成
+                if(this.checked) {
+                    tager = document.querySelector(".done");
+                } else {
+                    tager = document.querySelector(".todo");
+                }
+                tager.appendChild(parent);
+            }
+        }
+    }
+</script>
+</html>

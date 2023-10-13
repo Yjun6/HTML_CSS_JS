@@ -43,4 +43,16 @@ html,body {
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
+    height: calc(100% - 70px);
+    width: 100%;
+}
+.container .container-left {
+    height: 100%;
+    width: 30%;
+    background-color: aqua;
+}
+.container .container-right {
+    height: 100%;
+    width: 70%;
+    background-color: gold;
 }
